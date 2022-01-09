@@ -12,9 +12,10 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(pinTrigger, LOW);
+  delayMicroseconds(2);
   digitalWrite(pinTrigger, HIGH);
   delayMicroseconds(10);
-  digitalWrite(pinTrigger, LOW);
 
   roundTripTimeMicroSeconds = pulseIn(pinEcho, HIGH);
   int distanceInches = convertToDistance_inch(roundTripTimeMicroSeconds);
